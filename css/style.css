@@ -1017,3 +1017,288 @@ footer-bottom {
 .contact-list p {
     margin: 0;
 }
+
+/* Insights Page Upgrades (Screenshot Design) */
+.featured-blog-card {
+    background-color: var(--bg-white);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+}
+
+.featured-blog-card .blog-img-container {
+    height: auto;
+    max-height: 450px;
+}
+
+.blog-post-meta {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.blog-post-meta .meta-date {
+    color: var(--text-light);
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.featured-post-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.featured-post-title a {
+    color: var(--primary-color);
+}
+
+.featured-post-title a:hover {
+    color: var(--secondary-color);
+}
+
+.blog-grid-card {
+    background-color: var(--bg-white);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-grid-card .blog-img-container {
+    height: 200px;
+}
+
+.blog-grid-title {
+    font-size: 1.35rem;
+    line-height: 1.4;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.blog-grid-title a {
+    color: var(--primary-color);
+}
+
+.blog-grid-title a:hover {
+    color: var(--secondary-color);
+}
+
+.read-full-analysis-btn {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary-color);
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition-smooth);
+}
+
+.read-full-analysis-btn:hover {
+    color: var(--hover-gold);
+    letter-spacing: 2.5px;
+}
+
+.read-more-btn {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--secondary-color);
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition-smooth);
+}
+
+.read-more-btn:hover {
+    color: var(--hover-gold);
+    letter-spacing: 2px;
+}
+
+/* Sidebar Widgets upgrades */
+.insights-sidebar-widget {
+    margin-bottom: 40px;
+}
+
+.sidebar-widget-heading {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.insights-search-input {
+    background-color: var(--bg-white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 0.85rem;
+    padding: 12px 18px;
+    padding-right: 45px;
+    width: 100%;
+    color: var(--text-color);
+    transition: var(--transition-smooth);
+}
+
+.insights-search-input:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+.insights-categories-card {
+    background-color: var(--accent-color);
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.insights-categories-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.insights-categories-list li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 12px 0;
+}
+
+.insights-categories-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.insights-categories-list li:first-child {
+    padding-top: 0;
+}
+
+.insights-categories-list a {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.insights-categories-list a:hover {
+    color: var(--secondary-color);
+}
+
+.insights-categories-list .category-count {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+/* Newsletter Widget */
+.insights-newsletter-widget {
+    background-color: #0A0A0A;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 35px 30px;
+    color: var(--bg-white);
+}
+
+.insights-newsletter-icon {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.insights-newsletter-widget h4 {
+    color: var(--bg-white);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.insights-newsletter-widget p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.insights-newsletter-input {
+    background-color: #1A1A1A;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--bg-white);
+    font-size: 0.85rem;
+    padding: 12px 15px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.insights-newsletter-input::placeholder {
+    color: #666666;
+}
+
+.insights-newsletter-input:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+.insights-newsletter-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 12px;
+    width: 100%;
+    transition: var(--transition-smooth);
+}
+
+.insights-newsletter-btn:hover {
+    background-color: var(--hover-gold);
+}
+
+/* Custom square pagination */
+.insights-pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 0 0;
+    gap: 8px;
+}
+
+.insights-pagination li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.insights-pagination li.active a {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    border-color: var(--primary-color);
+}
+
+.insights-pagination li a:hover {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.insights-pagination li.disabled a {
+    color: #CCCCCC;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0.03);
+}
