@@ -79,6 +79,18 @@
 }
 
 @media (max-width: 767px) {
+    .insights-index { padding: 60px 0 68px; }
+
+    .insights-index-heading {
+        display: block;
+        margin-bottom: 34px;
+        padding-bottom: 28px;
+    }
+
+    .insights-index-heading h2 { margin-bottom: 16px; }
+    .insight-card-image { height: 225px; }
+    .insight-card-body { padding: 24px; }
+
     .home-hero h1 {
         font-size: 2.2rem;
     }
