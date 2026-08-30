@@ -228,12 +228,12 @@ a:hover {
 }
 
 .navbar-brand img {
-    height: 50px;
+    height: 70px;
     transition: var(--transition-smooth);
 }
 
 .navbar.scrolled .navbar-brand img {
-    height: 40px;
+    height: 55px;
 }
 
 .nav-link {
@@ -1656,4 +1656,42 @@ footer-bottom {
     color: #ffffff;
     margin-bottom: 0;
     letter-spacing: 0.5px;
+}
+
+/* Increased logo size adjustments */
+.navbar {
+    min-height: 90px;
+    transition: min-height 0.3s ease;
+}
+
+.navbar.scrolled {
+    min-height: 80px;
+}
+
+.navbar-brand {
+    padding: 10px 0;
+}
+
+@media (max-width: 992px) {
+    .navbar-brand img {
+        height: 60px;
+    }
+    
+    .navbar {
+        min-height: 80px;
+    }
+    
+    .navbar.scrolled {
+        min-height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 55px;
+    }
+    
+    .navbar {
+        min-height: 75px;
+    }
 }

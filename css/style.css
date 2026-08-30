@@ -228,12 +228,12 @@ a:hover {
 }
 
 .navbar-brand img {
-    height: 50px;
+    height: 70px;
     transition: var(--transition-smooth);
 }
 
 .navbar.scrolled .navbar-brand img {
-    height: 40px;
+    height: 55px;
 }
 
 .nav-link {
@@ -1679,7 +1679,7 @@ footer-bottom {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(26, 42, 58, 0.85) 0%, rgba(26, 42, 58, 0.75) 100%);
+    background: linear-gradient(135deg, rgba(20, 33, 46, 0.92) 0%, rgba(26, 42, 58, 0.82) 60%, rgba(26, 42, 58, 0.78) 100%);
     z-index: 1;
 }
 
@@ -1703,11 +1703,12 @@ footer-bottom {
 
 .article-title {
     font-size: 3.2rem;
-    line-height: 1.2;
+    line-height: 1.25;
     margin-bottom: 25px;
     font-weight: 700;
     color: white;
-    max-width: 800px;
+    max-width: 820px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
 @media (max-width: 768px) {
@@ -1777,9 +1778,41 @@ footer-bottom {
 
 .article-content {
     background: white;
-    padding: 60px;
+    padding: 60px 65px;
     border-radius: 8px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Case Law Callout Box */
+.case-callout {
+    background: #f5f7f9;
+    border-left: 4px solid var(--secondary-color);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin: 35px 0;
+}
+
+.case-callout .case-quote {
+    font-style: italic;
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: var(--primary-color);
+    margin-bottom: 14px;
+}
+
+.case-callout .case-cite {
+    font-size: 0.88rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.case-callout .case-note {
+    font-size: 0.98rem;
+    color: #555;
+    margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -1807,10 +1840,11 @@ footer-bottom {
 .article-content h2 {
     font-size: 1.9rem;
     color: var(--primary-color);
-    margin: 50px 0 25px;
+    margin: 55px 0 28px;
     padding-bottom: 15px;
     border-bottom: 2px solid rgba(182, 141, 64, 0.15);
     font-weight: 700;
+    line-height: 1.35;
 }
 
 .article-content h3 {
@@ -1821,10 +1855,10 @@ footer-bottom {
 }
 
 .article-content p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 25px;
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: #3f4650;
+    margin-bottom: 26px;
 }
 
 .article-content ul, .article-content ol {
@@ -2150,5 +2184,43 @@ footer-bottom {
     
     .article-cta {
         padding: 30px 25px;
+    }
+}
+
+/* Increased logo size adjustments */
+.navbar {
+    min-height: 90px;
+    transition: min-height 0.3s ease;
+}
+
+.navbar.scrolled {
+    min-height: 80px;
+}
+
+.navbar-brand {
+    padding: 10px 0;
+}
+
+@media (max-width: 992px) {
+    .navbar-brand img {
+        height: 60px;
+    }
+    
+    .navbar {
+        min-height: 80px;
+    }
+    
+    .navbar.scrolled {
+        min-height: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 55px;
+    }
+    
+    .navbar {
+        min-height: 75px;
     }
 }
