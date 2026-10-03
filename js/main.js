@@ -1,5 +1,5 @@
 /**
- * Simel Advocates - Main JavaScript Logic
+ * NE Simel Associates - Main JavaScript Logic
  */
 
 document.addEventListener('DOMContentLoaded', () => {
