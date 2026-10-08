@@ -228,12 +228,12 @@ a:hover {
 }
 
 .navbar-brand img {
-    height: 70px;
+    height: 88px;
     transition: var(--transition-smooth);
 }
 
 .navbar.scrolled .navbar-brand img {
-    height: 55px;
+    height: 68px;
 }
 
 .nav-link {
@@ -781,7 +781,7 @@ a:hover {
 
 .recent-post-img {
     width: 70px;
-    height: 70px;
+    height: 88px;
     object-fit: cover;
     margin-right: 15px;
 }
@@ -930,7 +930,7 @@ footer-bottom {
 }
 
 .footer-logo {
-    height: 45px;
+    height: 64px;
     margin-bottom: 20px;
 }
 
@@ -1530,7 +1530,7 @@ footer-bottom {
 .service-list-icon {
     flex-shrink: 0;
     width: 45px;
-    height: 45px;
+    height: 64px;
     background-color: rgba(182, 141, 64, 0.08);
     border: 1px solid rgba(182, 141, 64, 0.3);
     color: var(--secondary-color);
@@ -1674,7 +1674,7 @@ footer-bottom {
 
 @media (max-width: 992px) {
     .navbar-brand img {
-        height: 60px;
+        height: 76px;
     }
     
     .navbar {
@@ -1688,7 +1688,7 @@ footer-bottom {
 
 @media (max-width: 768px) {
     .navbar-brand img {
-        height: 55px;
+        height: 68px;
     }
     
     .navbar {
