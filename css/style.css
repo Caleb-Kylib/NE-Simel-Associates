@@ -1,4 +1,4 @@
-/* 
+﻿/* 
  * NE Simel Associates - Premium Law Firm Style Sheet
  * Palette: Rich Black (#111111), Antique Gold (#B68D40), Warm Ivory (#F8F5F0), Charcoal (#333333)
  */
@@ -218,25 +218,32 @@ a:hover {
     backdrop-filter: blur(10px);
     transition: var(--transition-smooth);
     border-bottom: 1px solid rgba(182, 141, 64, 0.1);
-    padding: 15px 0;
+    padding: 6px 0;
 }
 
 .navbar.scrolled {
-    padding: 8px 0;
+    padding: 4px 0;
     background-color: #111111;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
+.navbar-brand {
+    overflow: visible;
+    padding: 0;
+}
+
 .navbar-brand img {
-    height: 120px;
+    height: 80px;
     width: auto;
-    max-width: 220px;
+    max-width: 200px;
     object-fit: contain;
     transition: var(--transition-smooth);
+    display: block;
+    mix-blend-mode: screen;
 }
 
 .navbar.scrolled .navbar-brand img {
-    height: 98px;
+    height: 68px;
 }
 
 .nav-link {
@@ -332,30 +339,226 @@ a:hover {
     content: "|";
 }
 
-/* Team page introduction */
-.team-intro-section { padding: 82px 0 88px; background: #f8f5f0; }
-.team-intro-heading { display: grid; grid-template-columns: 1fr .72fr; align-items: end; gap: 70px; padding-bottom: 38px; border-bottom: 1px solid rgba(182,141,64,.28); }
-.team-intro-heading h2 { margin: 0; font-size: clamp(2.2rem, 4.4vw, 3.7rem); line-height: 1.13; }
-.team-intro-heading h2 em { color: var(--secondary-color); font-weight: 500; }
-.team-intro-heading p { max-width: 450px; margin: 0 0 5px; color: #68635d; font-size: 1rem; line-height: 1.85; }
-.team-principles { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 38px; border: 1px solid rgba(17,17,17,.09); background: rgba(255,255,255,.62); }
-.team-principle { position: relative; min-height: 220px; padding: 30px 32px 28px; }
-.team-principle + .team-principle { border-left: 1px solid rgba(17,17,17,.09); }
-.team-principle-number { display: block; margin-bottom: 22px; color: var(--secondary-color); font-size: .72rem; font-weight: 700; letter-spacing: .15em; }
-.team-principle > i { position: absolute; top: 25px; right: 28px; color: rgba(182,141,64,.55); font-size: 1.45rem; }
-.team-principle h3 { margin-bottom: 10px; font-size: 1.35rem; }
-.team-principle p { max-width: 300px; margin: 0; color: #77716a; font-size: .91rem; line-height: 1.75; }
+/* ============================================================
+   TEAM PAGE — intro section (after banner)
+   ============================================================ */
+.team-intro-section {
+    padding: 90px 0 100px;
+    background: #f8f5f0;
+    overflow: hidden;
+}
+
+/* Split row: pull-quote + text */
+.team-intro-split {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 80px;
+    align-items: center;
+    padding-bottom: 72px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid rgba(182, 141, 64, 0.25);
+}
+
+.team-intro-quote-col {
+    position: relative;
+    padding-left: 28px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.team-intro-eyebrow {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-bottom: 22px;
+}
+
+.team-intro-eyebrow i {
+    margin-right: 6px;
+    font-size: 0.9rem;
+}
+
+.team-intro-quote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.45rem, 2.6vw, 2rem);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--primary-color);
+    margin: 0 0 22px;
+    font-style: normal;
+}
+
+.team-intro-cite {
+    font-size: 0.82rem;
+    color: #8a8278;
+    font-style: normal;
+    letter-spacing: 0.08em;
+}
+
+/* Right text column */
+.team-intro-heading-text {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+    line-height: 1.2;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.team-intro-heading-text em {
+    color: var(--secondary-color);
+    font-style: normal;
+    font-weight: 500;
+}
+
+.team-intro-text-col > p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #68635d;
+    margin-bottom: 36px;
+    max-width: 520px;
+}
+
+/* Stat row */
+.team-intro-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.team-stat {
+    display: flex;
+    flex-direction: column;
+    padding: 0 28px;
+}
+
+.team-stat:first-child { padding-left: 0; }
+
+.team-stat strong {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.team-stat span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #8a8278;
+    margin-top: 5px;
+}
+
+.team-stat-divider {
+    width: 1px;
+    height: 44px;
+    background: rgba(182, 141, 64, 0.35);
+    flex-shrink: 0;
+}
+
+/* Principles strip */
+.team-principles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    background: white;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    box-shadow: 0 8px 40px rgba(17, 17, 17, 0.05);
+}
+
+.team-principle {
+    position: relative;
+    padding: 42px 38px 50px;
+    overflow: hidden;
+    transition: background 0.32s ease;
+}
+
+.team-principle:hover { background: var(--primary-color); }
+
+.team-principle:hover h3,
+.team-principle:hover p,
+.team-principle:hover .team-principle-number { color: white; }
+
+.team-principle:hover .team-principle-icon-wrap {
+    background: rgba(182, 141, 64, 0.2);
+    color: var(--secondary-color);
+}
+
+.team-principle:hover .team-principle-bar { width: 100%; }
+
+.team-principle + .team-principle { border-left: 1px solid rgba(17, 17, 17, 0.08); }
+
+.team-principle-icon-wrap {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(182, 141, 64, 0.1);
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    border-radius: 4px;
+    margin-bottom: 28px;
+    transition: background 0.32s ease, color 0.32s ease;
+}
+
+.team-principle-number {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    transition: color 0.32s ease;
+}
+
+.team-principle h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: var(--primary-color);
+    transition: color 0.32s ease;
+}
+
+.team-principle p {
+    font-size: 0.92rem;
+    line-height: 1.78;
+    color: #77716a;
+    margin: 0 0 0;
+    max-width: 300px;
+    transition: color 0.32s ease;
+}
+
+.team-principle-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 44px;
+    background: var(--secondary-color);
+    transition: width 0.4s ease;
+}
+
+@media (max-width: 991.98px) {
+    .team-intro-split {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-bottom: 50px;
+        margin-bottom: 44px;
+    }
+}
 
 @media (max-width: 767.98px) {
     .team-intro-section { padding: 58px 0 62px; }
-    .team-intro-heading { grid-template-columns: 1fr; gap: 20px; padding-bottom: 28px; }
-    .team-principles { grid-template-columns: 1fr; margin-top: 26px; }
-    .team-principle { min-height: auto; padding: 25px 24px; }
-    .team-principle + .team-principle { border-left: 0; border-top: 1px solid rgba(17,17,17,.09); }
-    .team-principle-number { margin-bottom: 14px; }
+    .team-principles { grid-template-columns: 1fr; }
+    .team-principle { padding: 32px 28px 40px; }
+    .team-principle + .team-principle { border-left: 0; border-top: 1px solid rgba(17,17,17,.08); }
+    .team-intro-stats { flex-wrap: wrap; gap: 20px; }
+    .team-stat-divider { display: none; }
+    .team-stat { padding: 0; }
 }
-
-/* Homepage Hero */
 .home-hero {
     position: relative;
     height: 90vh;
@@ -2217,42 +2420,7 @@ footer-bottom {
     }
 }
 
-/* Increased logo size adjustments */
-.navbar {
-    min-height: 90px;
-    transition: min-height 0.3s ease;
-}
 
-.navbar.scrolled {
-    min-height: 80px;
-}
-
-.navbar-brand {
-    padding: 10px 0;
-}
-
-@media (max-width: 992px) {
-    .navbar-brand img {
-        height: 76px;
-    }
-    
-    .navbar {
-        min-height: 80px;
-    }
-    
-    .navbar.scrolled {
-        min-height: 70px;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar-brand img {
-        height: 68px;
-    }
-    
-    .navbar {
-        min-height: 75px;
-    }
 }
 
 /* ============================================
