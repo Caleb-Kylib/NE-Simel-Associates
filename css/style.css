@@ -228,12 +228,15 @@ a:hover {
 }
 
 .navbar-brand img {
-    height: 88px;
+    height: 120px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
     transition: var(--transition-smooth);
 }
 
 .navbar.scrolled .navbar-brand img {
-    height: 68px;
+    height: 98px;
 }
 
 .nav-link {
@@ -953,8 +956,12 @@ footer-bottom {
 }
 
 .footer-logo {
-    height: 64px;
+    height: 70px;
+    max-height: 70px;
+    width: auto;
+    object-fit: contain;
     margin-bottom: 20px;
+    display: block;
 }
 
 .footer-map-container {
