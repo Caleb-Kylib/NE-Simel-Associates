@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: sitemap.xml
+Sitemap: https://www.nesimelassociates.co.ke/sitemap.xml

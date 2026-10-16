@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             !link.classList.contains('floating-cta')
         ) {
             link.addEventListener('click', (e) => {
+                if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
                 e.preventDefault();
                 const dest = link.href;
                 document.body.classList.remove('page-loaded');
@@ -58,6 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
     floatingCta.setAttribute('aria-label', 'Book a Consultation');
     floatingCta.innerHTML = '<i class="bi bi-calendar-check-fill"></i><span class="fcta-text">Book Consultation</span>';
     document.body.appendChild(floatingCta);
+
+    const whatsappCta = document.createElement('a');
+    whatsappCta.href = 'https://wa.me/254703758251?text=Hello%20NE%20Simel%20Associates%2C%20I%20would%20like%20to%20ask%20about%20booking%20a%20consultation.';
+    whatsappCta.className = 'whatsapp-cta';
+    whatsappCta.target = '_blank';
+    whatsappCta.rel = 'noopener noreferrer';
+    whatsappCta.setAttribute('aria-label', 'Contact NE Simel Associates on WhatsApp');
+    whatsappCta.innerHTML = '<i class="bi bi-whatsapp" aria-hidden="true"></i><span>WhatsApp</span>';
+    document.body.appendChild(whatsappCta);
 
     /* =========================================================
        5. HERO TYPEWRITER (index.html only)
@@ -171,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (input) input.classList.remove('is-invalid');
             });
 
+            if (!nameInput || !emailInput || !phoneInput || !messageInput) return;
             if (!nameInput.value.trim()) {
                 nameInput.classList.add('is-invalid');
                 isValid = false;
@@ -196,34 +207,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (statusDiv) {
                     statusDiv.className = 'alert alert-danger mt-3';
                     statusDiv.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-2"></i>' + errorMessage;
+                    statusDiv.setAttribute('role', 'alert');
                     statusDiv.style.display = 'block';
                 }
                 return;
             }
 
-            // Loading state
-            const originalBtnHTML = submitBtn.innerHTML;
-            submitBtn.classList.add('loading');
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...';
-
-            setTimeout(() => {
-                submitBtn.classList.remove('loading');
-                submitBtn.classList.add('success');
-                submitBtn.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i>Message Sent!';
-                if (statusDiv) {
-                    statusDiv.className = 'alert alert-success mt-3';
-                    statusDiv.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i>Thank you! Your consultation request has been sent. We will contact you shortly.';
-                    statusDiv.style.display = 'block';
-                }
-                contactForm.reset();
-                setTimeout(() => {
-                    submitBtn.classList.remove('success');
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnHTML;
-                    if (statusDiv) statusDiv.style.display = 'none';
-                }, 5000);
-            }, 1800);
+            // Static sites cannot deliver form data. Open a prefilled email draft and
+            // tell the visitor explicitly that they still need to send it.
+            const subjectSelect = document.getElementById('formSubject');
+            const contactPreference = document.getElementById('formContactPreference');
+            const subject = subjectSelect && subjectSelect.value
+                ? subjectSelect.options[subjectSelect.selectedIndex].text
+                : 'Consultation request';
+            const body = [
+                `Name: ${nameInput.value.trim()}`,
+                `Email: ${emailInput.value.trim()}`,
+                `Phone: ${phoneInput.value.trim()}`,
+                `Practice area: ${subject}`,
+                `Preferred contact method: ${contactPreference ? contactPreference.value : 'Email'}`,
+                '',
+                'Message:',
+                messageInput.value.trim()
+            ].join('\n');
+            if (statusDiv) {
+                statusDiv.className = 'alert alert-info mt-3';
+                statusDiv.innerHTML = '<i class="bi bi-info-circle-fill me-2"></i>Your email app should open with your request. Please review it and press Send. If it does not open, email <a href="mailto:simeladvocates@gmail.com">simeladvocates@gmail.com</a>. For your privacy, do not include confidential details until the firm confirms a secure way to share them.';
+                statusDiv.style.display = 'block';
+                statusDiv.setAttribute('role', 'status');
+            }
+            window.location.href = `mailto:simeladvocates@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         });
     }
 
@@ -277,6 +290,34 @@ document.addEventListener('DOMContentLoaded', () => {
             const scrollHeight = docEl.scrollHeight - docEl.clientHeight;
             progressBar.style.width = scrollHeight > 0 ? (scrollTop / scrollHeight * 100) + '%' : '0%';
         }, { passive: true });
+    }
+
+    /* INSIGHTS SEARCH AND CATEGORY FILTER */
+    const insightSearch = document.getElementById('insightSearch');
+    const insightCategory = document.getElementById('insightCategory');
+    const insightCards = Array.from(document.querySelectorAll('#insightGrid .insight-card'));
+    const insightStatus = document.getElementById('insightResultsStatus');
+    const filterInsights = () => {
+        const query = insightSearch ? insightSearch.value.trim().toLocaleLowerCase() : '';
+        const category = insightCategory ? insightCategory.value : '';
+        let visible = 0;
+        insightCards.forEach(card => {
+            const text = card.textContent.toLocaleLowerCase();
+            const categoryLabel = card.querySelector('.insight-card-category');
+            const cardCategory = card.dataset.category || (categoryLabel ? categoryLabel.textContent.trim().toLocaleLowerCase() : '');
+            const show = (!query || text.includes(query)) && (!category || cardCategory === category);
+            card.closest('.col-md-6').hidden = !show;
+            if (show) visible++;
+        });
+        if (insightStatus) insightStatus.textContent = `${visible} article${visible === 1 ? '' : 's'} shown`;
+    };
+    if (insightSearch) insightSearch.addEventListener('input', filterInsights);
+    if (insightCategory) insightCategory.addEventListener('change', filterInsights);
+
+    /* REDUCE MOTION: keep animated content visible for users who request it */
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.body.classList.add('reduced-motion');
+        document.querySelectorAll('[data-aos]').forEach(el => el.classList.add('aos-animate'));
     }
 
 });

@@ -6,13 +6,14 @@
     <title>Legal Insights | NE Simel Associates - Law Firm in Narok, Kenya</title>
     <meta name="description" content="Stay informed with our regular legal articles, briefs, and analysis of Kenyan laws. We cover property acts, commercial regulations, family codes, and estate succession.">
     <meta name="keywords" content="Kenya legal blog, Law commentary Narok, Land laws Kenya, Court case reviews">
-    <link rel="canonical" href="insights.html">
+    <link rel="canonical" href="https://www.nesimelassociates.co.ke/insights.html">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.nesimelassociates.co.ke/insights.html">
     <meta property="og:title" content="Legal Insights | NE Simel Associates - Law Firm in Narok, Kenya">
     <meta property="og:description" content="Stay informed with our regular legal articles, briefs, and analysis of Kenyan laws. We cover property acts, commercial regulations, family codes, and estate succession.">
-    <meta property="og:image" content="assets/images/insights_banner.png">
+    <meta property="og:image" content="https://www.nesimelassociates.co.ke/assets/img/blog.jpg">
 
     <!-- CSS Links -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -40,9 +41,7 @@
             </div>
             <div class="top-bar-socials d-flex align-items-center">
                 <span class="d-none d-lg-inline me-2"><i class="bi bi-clock me-1 text-secondary-color"></i> Monday to Friday: 8:00 AM - 5:00 PM</span>
-                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://wa.me/254703758251" target="_blank" rel="noopener noreferrer" aria-label="Contact NE Simel Associates on WhatsApp"><i class="bi bi-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -109,7 +108,35 @@
                 <p>Clear, considered commentary to help you understand the legal issues behind important personal and business decisions.</p>
             </div>
 
-            <div class="row g-4 g-lg-5">
+            <div class="alert alert-light border d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                <div><strong>Preparing for a consultation?</strong><br><span class="text-muted">Use our print-friendly land purchase and probate checklists.</span></div>
+                <a class="btn btn-gold flex-shrink-0" href="checklists.html">View checklists <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i></a>
+            </div>
+
+            <div class="insight-filters row g-3 align-items-end mb-4" role="search" aria-label="Filter legal insights">
+                <div class="col-md-7">
+                    <label for="insightSearch" class="form-label fw-bold">Search articles</label>
+                    <input id="insightSearch" type="search" class="form-control" placeholder="Search by topic or keyword">
+                </div>
+                <div class="col-md-5">
+                    <label for="insightCategory" class="form-label fw-bold">Practice area</label>
+                    <select id="insightCategory" class="form-select">
+                        <option value="">All practice areas</option>
+                        <option value="property law">Property Law</option>
+                        <option value="employment law">Employment Law</option>
+                        <option value="technology law">Technology Law</option>
+                        <option value="tax law">Tax Law</option>
+                        <option value="family law">Family Law</option>
+                        <option value="commercial law">Commercial Law</option>
+                        <option value="defamation law">Defamation Law</option>
+                        <option value="succession law">Succession Law</option>
+                        <option value="constitutional law">Constitutional Law</option>
+                    </select>
+                </div>
+                <p id="insightResultsStatus" class="small text-muted mb-0" aria-live="polite">9 articles shown</p>
+            </div>
+
+            <div class="row g-4 g-lg-5" id="insightGrid">
                 <!-- Card 1: Buying Land in Kenya -->
                 <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <article class="insight-card">
@@ -258,127 +285,6 @@
         </div>
     </section>
 
-    <!-- 4. Main Publications List & Sidebar Section -->
-    <section class="legacy-insights-content d-none" aria-hidden="true">
-        <div class="container">
-            <div class="row g-5">
-                
-                <!-- Blog List Column -->
-                <div class="col-lg-8" data-aos="fade-right">
-                    
-                    <!-- Featured Article Card (Top) -->
-                    <div class="featured-blog-card">
-                        <div class="blog-img-container">
-                            <img src="assets/img/contract.jpg" alt="Data Protection Contract on Desk" class="w-100" style="object-fit: cover; max-height: 400px;">
-                        </div>
-                        <div class="p-4 p-md-5">
-                            <span class="blog-post-meta">Corporate Governance <span class="meta-date">• October 12, 2026</span></span>
-                            <h2 class="featured-post-title"><a href="#">Navigating the New Data Protection Regulations in Commercial Transactions</a></h2>
-                            <p class="text-muted mb-4">With the recent amendments to the Kenyan Data Protection Act, businesses face a pivotal shift in how customer information is handled during mergers and acquisitions. Our comprehensive guide details the strategic compliance required ...</p>
-                            <a href="#" class="read-full-analysis-btn">Read Full Analysis <i class="bi bi-chevron-right ms-1"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Secondary Articles Grid -->
-                    <div class="row g-4">
-                        <!-- Card 1: Real Estate -->
-                        <div class="col-md-6">
-                            <div class="blog-grid-card">
-                                <div class="blog-img-container">
-                                    <img src="assets/img/property.jpg" alt="Structuring Foreign Investment in Real Estate" class="w-100 h-100" style="object-fit: cover;">
-                                </div>
-                                <div class="p-4 flex-grow-1 d-flex flex-column">
-                                    <span class="blog-post-meta">Real Estate</span>
-                                    <h3 class="blog-grid-title"><a href="#">Structuring Foreign Investment in Kenyan Real Estate</a></h3>
-                                    <p class="text-muted small mb-4">An overview of the legal frameworks governing international capital in domestic property markets, focusing on tax...</p>
-                                    <div class="mt-auto">
-                                        <a href="#" class="read-more-btn">Read More <i class="bi bi-arrow-right ms-1"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 2: Dispute Resolution -->
-                        <div class="col-md-6">
-                            <div class="blog-grid-card">
-                                <div class="blog-img-container">
-                                    <img src="assets/img/courtroom.jpg" alt="Arbitration Clauses in Commercial Contracts" class="w-100 h-100" style="object-fit: cover;">
-                                </div>
-                                <div class="p-4 flex-grow-1 d-flex flex-column">
-                                    <span class="blog-post-meta">Dispute Resolution</span>
-                                    <h3 class="blog-grid-title"><a href="#">The Efficacy of Arbitration Clauses in Commercial Contracts</a></h3>
-                                    <p class="text-muted small mb-4">Examining recent High Court precedents that solidify the enforceability of arbitration agreements in complex commercial...</p>
-                                    <div class="mt-auto">
-                                        <a href="#" class="read-more-btn">Read More <i class="bi bi-arrow-right ms-1"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Square Pagination -->
-                    <nav aria-label="Blog pagination">
-                        <ul class="insights-pagination">
-                            <li class="disabled">
-                                <a href="#" aria-label="Previous">&lt;</a>
-                            </li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">&gt;</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <!-- Sidebar Column -->
-                <div class="col-lg-4" data-aos="fade-left">
-                    <div class="ps-lg-3">
-                        
-                        <!-- Widget 1: Search -->
-                        <div class="insights-sidebar-widget">
-                            <h4 class="sidebar-widget-heading">Search Insights</h4>
-                            <form action="#" class="position-relative">
-                                <input type="text" class="insights-search-input" placeholder="Keywords...">
-                                <button type="submit" class="btn position-absolute top-50 end-0 translate-middle-y text-muted px-3" aria-label="Search Submit"><i class="bi bi-search"></i></button>
-                            </form>
-                        </div>
-
-                        <!-- Widget 2: Practice Areas -->
-                        <div class="insights-sidebar-widget">
-                            <h4 class="sidebar-widget-heading">Practice Areas</h4>
-                            <div class="insights-categories-card">
-                                <ul class="insights-categories-list">
-                                    <li><a href="service-commercial-law.html"><span>Corporate Law</span> <span class="category-count">(10)</span></a></li>
-                                    <li><a href="service-civil-litigation.html"><span>Dispute Resolution</span> <span class="category-count">(6)</span></a></li>
-                                    <li><a href="service-property-conveyancing.html"><span>Real Estate</span> <span class="category-count">(11)</span></a></li>
-                                    <li><a href="service-family-law.html"><span>Family Law</span> <span class="category-count">(5)</span></a></li>
-                                    <li><a href="service-legal-consultancy.html"><span>Intellectual Property</span> <span class="category-count">(7)</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Widget 3: Legal Briefing Newsletter -->
-                        <div class="insights-sidebar-widget">
-                            <div class="insights-newsletter-widget">
-                                <i class="bi bi-envelope insights-newsletter-icon"></i>
-                                <h4>Legal Briefing</h4>
-                                <p>Subscribe to receive exclusive legal insights and regulatory updates directly to your inbox.</p>
-                                <form action="#">
-                                    <input type="email" class="insights-newsletter-input" placeholder="Professional Email" required>
-                                    <button type="submit" class="insights-newsletter-btn">Subscribe</button>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <!-- 5. CTA Section -->
     <section class="cta-section py-5">
         <div class="container py-4" data-aos="zoom-in">
@@ -404,7 +310,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h4>Practice Areas</h4>
                     <ul class="list-unstyled small lh-lg">
-                        <li><a href="service-property-conveyancing.html">Property & Conveyancing</a></li>
+                        <li><a href="service-land-property-law.html">Property & Conveyancing</a></li>
                         <li><a href="service-commercial-law.html">Commercial & Corporate Law</a></li>
                         <li><a href="service-civil-litigation.html">Civil & Commercial Litigation</a></li>
                         <li><a href="service-family-law.html">Family & Matrimonial Disputes</a></li>
