@@ -138,3 +138,117 @@
         font-size: 1.8rem;
     }
 }
+
+/* Small screen layout refinements shared by all pages */
+@media (max-width: 767px) {
+    html { scroll-padding-top: 76px; }
+
+    .container {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    .navbar-brand img,
+    .navbar.scrolled .navbar-brand img {
+        height: 60px;
+        max-width: min(190px, 62vw);
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.4rem;
+    }
+
+    .navbar-collapse {
+        max-height: calc(100vh - 76px);
+        overflow-y: auto;
+    }
+
+    .home-hero {
+        min-height: 520px;
+        padding: 105px 0 70px;
+        background-attachment: scroll;
+        background-position: center;
+    }
+
+    .home-hero-content { max-width: 100%; }
+
+    .home-hero .btn,
+    .cta-section .btn {
+        min-height: 48px;
+        padding: 0.75rem 1.15rem;
+        white-space: normal;
+    }
+
+    .hero-banner {
+        min-height: 245px;
+        height: auto;
+        padding: 55px 0;
+        background-position: center;
+    }
+
+    .hero-banner .breadcrumb { flex-wrap: wrap; }
+
+    .team-intro-section { padding: 52px 0 58px; }
+    .team-intro-heading-text { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+    .team-member-img { height: clamp(245px, 72vw, 350px); }
+    .team-member-info { padding: 24px 20px; }
+    .team-contact-info a { overflow-wrap: anywhere; }
+
+    .article-hero-section { padding: 100px 0 55px; }
+    .article-hero-section .breadcrumb { margin-bottom: 24px; flex-wrap: wrap; }
+    .article-title { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+    .article-meta { flex-wrap: wrap; gap: 10px 18px; margin-top: 20px; }
+    .article-content-section { padding: 42px 0; }
+    .article-content { padding: 28px 22px; overflow-wrap: anywhere; }
+    .article-content .lead { font-size: 1.1rem; margin-bottom: 28px; }
+    .article-content img,
+    .article-content iframe,
+    .article-content video { max-width: 100%; height: auto; }
+    .article-content table { display: block; max-width: 100%; overflow-x: auto; }
+    .case-callout { padding: 20px; }
+
+    .services-quick-nav { top: 68px; }
+    .snav-pill { padding: 12px 16px; }
+
+    .insights-index { padding: 48px 0; }
+    .insight-card-body { padding: 22px; }
+    .insight-card h3 { font-size: 1.3rem; }
+
+    .contact-list li:hover,
+    .client-card:hover,
+    .team-member-card:hover,
+    .service-card-inner:hover { transform: none; }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea,
+    input, select, textarea { font-size: 16px; }
+
+    .floating-cta {
+        right: 14px;
+        bottom: 14px;
+        min-height: 48px;
+        padding: 10px 14px;
+        font-size: 0.7rem;
+        letter-spacing: 0.6px;
+    }
+
+    .whatsapp-cta {
+        right: 14px;
+        bottom: 76px;
+        min-height: 44px;
+        padding: 9px 13px;
+    }
+
+    footer .row { --bs-gutter-y: 2rem; }
+    footer .footer-logo { max-width: min(210px, 75vw); height: auto; }
+}
+
+@media (max-width: 380px) {
+    .container { --bs-gutter-x: 1.25rem; }
+    .home-hero { min-height: 480px; }
+    .home-hero h1 { font-size: 1.75rem; }
+    .hero-banner h1 { font-size: 1.65rem; }
+    .article-content { padding: 24px 18px; }
+    .floating-cta { right: 10px; bottom: 10px; padding: 9px 11px; }
+    .whatsapp-cta { right: 10px; bottom: 70px; }
+}
