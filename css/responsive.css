@@ -235,9 +235,17 @@
     .whatsapp-cta {
         right: 14px;
         bottom: 76px;
-        min-height: 44px;
-        padding: 9px 13px;
+        width: 52px;
+        height: 52px;
+        min-height: 52px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
     }
+
+    .whatsapp-cta span { display: none; }
+    .whatsapp-cta i { font-size: 1.45rem; }
 
     footer .row { --bs-gutter-y: 2rem; }
     footer .footer-logo { max-width: min(210px, 75vw); height: auto; }
@@ -250,5 +258,5 @@
     .hero-banner h1 { font-size: 1.65rem; }
     .article-content { padding: 24px 18px; }
     .floating-cta { right: 10px; bottom: 10px; padding: 9px 11px; }
-    .whatsapp-cta { right: 10px; bottom: 70px; }
+    .whatsapp-cta { right: 10px; bottom: 70px; width: 48px; height: 48px; min-height: 48px; }
 }
