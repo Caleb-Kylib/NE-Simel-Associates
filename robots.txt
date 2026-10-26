@@ -1,5 +1,3 @@
+﻿# TEMP: noindex for client preview, REMOVE before launching on real domain
 User-agent: *
 Allow: /
-
-# Sitemap Location
-Sitemap: https://www.nesimelassociates.co.ke/sitemap.xml
