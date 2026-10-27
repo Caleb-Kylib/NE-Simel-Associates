@@ -1,5 +1,5 @@
 /**
- * NE Simel Associates — Main JavaScript
+ * NE Simel & Associates — Main JavaScript
  * Upgraded with page transitions, floating CTA, typewriter, reading progress,
  * service quick-nav, and enhanced form states.
  */
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     whatsappCta.className = 'whatsapp-cta';
     whatsappCta.target = '_blank';
     whatsappCta.rel = 'noopener noreferrer';
-    whatsappCta.setAttribute('aria-label', 'Contact NE Simel Associates on WhatsApp');
+    whatsappCta.setAttribute('aria-label', 'Contact NE Simel & Associates on WhatsApp');
     whatsappCta.innerHTML = '<i class="bi bi-whatsapp" aria-hidden="true"></i><span>WhatsApp</span>';
     document.body.appendChild(whatsappCta);
 
